@@ -1,0 +1,15 @@
+name: tests
+on: {push, pull_requests}
+
+jobs:
+tests:
+runs-on: ubuntu-latest
+steps:
+uses: actions/checkout@v2
+uses: actions/setup node@v2
+with:
+node-version 12
+-name: install deps
+run: rpn ci
+-name: run tests
+run: rpc test
